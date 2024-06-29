@@ -1,0 +1,44 @@
+<div class="example-container">
+    <section>
+        <div class="example-label">Add User</div>
+    </section>
+    <form [formGroup]="addUserForm" class="example-container">
+
+        <mat-form-field>
+            <mat-label>Enter your role</mat-label>
+            <input matInput formControlName="role" required />
+            <mat-error
+                *ngIf="addUserForm?.controls?.['role']?.hasError('required') && addUserForm?.controls?.['role']?.touched"
+                class="form-error-msg"> Role is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your name</mat-label>
+            <input matInput formControlName="name" required />
+            <mat-error
+                *ngIf="addUserForm?.controls?.['name']?.hasError('required') && addUserForm?.controls?.['name']?.touched">
+                Name is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
+            <mat-error
+                *ngIf="addUserForm?.controls?.['email']?.hasError('required') && addUserForm?.controls?.['email']?.touched">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="addUserForm?.controls?.['email']?.hasError('pattern')">
+                Please enter valid email
+            </mat-error>
+        </mat-form-field>
+        <section>
+            <div class="button-alignment">
+                <button mat-raised-button (click)="onSubmit(addUserForm.value)"
+                    [disabled]="!(addUserForm.valid)">Submit</button>
+                <button mat-raised-button matDialogClose>Cancel</button>
+
+            </div>
+        </section>
+    </form>
+
+</div>

@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+}
+
+button {
+    margin-right: 8px;
+}
+
+.button-alignment {
+    margin-bottom: 2%;
+}
+
+.example-label {
+    margin-bottom: 6%;
+}
