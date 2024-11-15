@@ -17,12 +17,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatSortModule } from '@angular/material/sort';
-
+import { InteractiveBoxesComponent } from './views/interactive-boxes/interactive-boxes.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule( {
   declarations: [
     AppComponent,
     UsersComponent,
     AddUserComponent,
+    InteractiveBoxesComponent,
 
   ],
   imports: [
@@ -40,7 +43,9 @@ import { MatSortModule } from '@angular/material/sort';
     ReactiveFormsModule,
     MatIconModule,
     Ng2SearchPipeModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   exports: [
     MatTableModule,
